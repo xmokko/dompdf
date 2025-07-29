@@ -277,6 +277,32 @@ class Frame
 
         $this->_style = null;
         unset($this->_style);
+
+        // > memory leak fix
+        $this->_prev_sibling = null;
+        unset($this->_prev_sibling);
+        $this->_next_sibling = null;
+        unset($this->_next_sibling);
+        $this->_parent = null;
+        unset($this->_parent);
+        $this->_decorator = null;
+        unset($this->_decorator);
+        $this->_node = null;
+        unset($this->_node);
+        $this->_containing_block = null;
+        unset($this->_containing_block);
+        $this->_position = null;
+        unset($this->_position);
+        $this->_is_cache = null;
+        unset($this->_is_cache);
+        unset($this->_first_child);
+        unset($this->_last_child);
+        unset($this->_containing_line);
+        unset($this->_id);
+        unset($this->_opacity);
+        unset($this->_already_pushed);
+        unset($this->_float_next_line);
+        // < memeory leak fix
     }
 
     /**

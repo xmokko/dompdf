@@ -151,6 +151,40 @@ abstract class AbstractFrameDecorator extends Frame
 
         $this->_reflower = null;
         unset($this->_reflower);
+
+        // > memory leak fix
+        $this->_containing_line = null;
+        unset($this->_containing_line);
+        $this->_dompdf = null;
+        unset($this->_dompdf);
+        $this->_cached_parent = null;
+        unset($this->_cached_parent);
+        $this->_block_parent = null;
+        unset($this->_parent);
+        $this->_is_cache = null;
+        unset($this->_is_cache);
+        unset($this->text_spacing);
+        unset($this->mapped_font);
+        unset($this->_counters);
+        unset($this->_block_parent);
+        unset($this->_positioned_parent);
+        unset($this->content_set);
+        unset($this->is_split);
+        unset($this->is_split_off);
+        unset($this->_node);
+        unset($this->_id);
+        unset($this->_style);
+        unset($this->_first_child);
+        unset($this->_last_child);
+        unset($this->_prev_sibling);
+        unset($this->_next_sibling);
+        unset($this->_containing_block);
+        unset($this->_position);
+        unset($this->_opacity);
+        unset($this->_decorator);
+        unset($this->_already_pushed);
+        unset($this->_float_next_line);
+        // < memory leak fix
     }
 
     /**
